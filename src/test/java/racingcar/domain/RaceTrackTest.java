@@ -24,10 +24,9 @@ public class RaceTrackTest {
     void 차량_Register로_초기화_시킨다() {
         //given
         String inputString = "Tester1, Tester2, Tester3";
-        CarRegister carRegister = new CarRegister(inputString);
 
         //when
-        RaceTrack raceTrack = new RaceTrack(carRegister.getCarNames());
+        RaceTrack raceTrack = new RaceTrack(new CarRegister(inputString));
 
         //then
         Assertions.assertThat(raceTrack.carCount()).isEqualTo(3);

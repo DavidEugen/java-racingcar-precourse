@@ -8,7 +8,11 @@ public class RaceTrack {
     private final List<Car> cars;
 
     public RaceTrack(String[] carNames) {
-        cars = readyCars(carNames);
+        this.cars = readyCars(carNames);
+    }
+
+    public RaceTrack(CarRegister carRegister) {
+        this(carRegister.getCarNames());
     }
 
     private List<Car> readyCars(String[] carNames) {
