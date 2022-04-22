@@ -16,4 +16,7 @@ public class CarRegister {
         return carNames[index];
     }
 
+    public String[] getCarNames() {
+        return this.carNames;
+    }
 }
