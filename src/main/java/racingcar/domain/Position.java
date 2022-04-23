@@ -29,4 +29,11 @@ public class Position {
     public void increase() {
         position++;
     }
+
+    public Position getBiggerPosition(Position comparePosition) {
+        if (this.position >= comparePosition.position) {
+            return this;
+        }
+        return comparePosition;
+    }
 }
