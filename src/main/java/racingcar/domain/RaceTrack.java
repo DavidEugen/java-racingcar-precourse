@@ -13,13 +13,13 @@ public class RaceTrack {
         this.lap = new Lap(0);
     }
 
-    public RaceTrack(CarRegister carRegister) {
-        this(carRegister.getCarNames());
+    public RaceTrack(CarNames carNames) {
+        this(carNames.getCarNames());
         this.lap = new Lap(0);
     }
 
-    public RaceTrack(CarRegister carRegister, Lap lap) {
-        this(carRegister.getCarNames());
+    public RaceTrack(CarNames carNames, Lap lap) {
+        this(carNames.getCarNames());
         this.lap = lap;
     }
 
@@ -51,4 +51,7 @@ public class RaceTrack {
         return cars.get(index);
     }
 
+    public boolean keepGoing() {
+        return lap.getCurrentLap() > 0;
+    }
 }

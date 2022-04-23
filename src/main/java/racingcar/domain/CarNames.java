@@ -1,10 +1,10 @@
 package racingcar.domain;
 
-public class CarRegister {
+public class CarNames {
 
     private final String[] carNames;
 
-    public CarRegister(String inputString) {
+    public CarNames(String inputString) {
         this.carNames = inputString.split("\\s*,\\s*");
     }
 

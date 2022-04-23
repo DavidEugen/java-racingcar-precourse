@@ -35,7 +35,7 @@ public class RaceTrackTest {
     @DisplayName("차량을 Register로 초기화 시킨다")
     void 차량_Register로_초기화_시킨다() {
         //when
-        RaceTrack raceTrack = new RaceTrack(new CarRegister(inputNameString));
+        RaceTrack raceTrack = new RaceTrack(new CarNames(inputNameString));
 
         //then
         assertThat(raceTrack.carCount()).isEqualTo(3);
@@ -45,7 +45,7 @@ public class RaceTrackTest {
     @DisplayName("레이싱을 시도회수를 등록한다. ")
     void 시도회수를_등록한다() {
         //when
-        RaceTrack raceTrack = new RaceTrack(new CarRegister(inputNameString),new Lap(inputLapCountString));
+        RaceTrack raceTrack = new RaceTrack(new CarNames(inputNameString),new Lap(inputLapCountString));
 
         //then
         assertThat(raceTrack.getCurrentLap()).isEqualTo(3);
