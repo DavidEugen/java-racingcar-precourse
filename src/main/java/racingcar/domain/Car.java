@@ -3,23 +3,24 @@ package racingcar.domain;
 public class Car {
 
     private final String name;
-    private int position;
+    private Position position;
 
     public Car(String name) {
         this.name = name;
+        this.position = new Position(0);
     }
 
     public String getName() {
         return this.name;
     }
 
-    public int getPosition() {
+    public Position getPosition() {
         return this.position;
     }
 
     public void move(AccelPowerStrategy accelerationPowerStrategy) {
         if (accelerationPowerStrategy.isMove()) {
-            this.position++;
+            position.increase();
         }
     }
 
