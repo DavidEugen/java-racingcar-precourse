@@ -5,19 +5,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 
 public class RaceTrackTest {
 
     private String inputNameString;
-    private String inputLapCountString;
+    private int inputLapCountString;
 
     @BeforeEach
     void setup() {
         //given
         inputNameString = "Test1, Test2, Test3";
-        inputLapCountString = "3";
+        inputLapCountString = 3;
     }
 
     @Test
@@ -47,7 +45,7 @@ public class RaceTrackTest {
     @DisplayName("레이싱을 시도회수를 등록한다. ")
     void 시도회수를_등록한다() {
         //when
-        RaceTrack raceTrack = new RaceTrack(new CarRegister(inputNameString),new LapRegister(inputLapCountString));
+        RaceTrack raceTrack = new RaceTrack(new CarRegister(inputNameString),new Lap(inputLapCountString));
 
         //then
         assertThat(raceTrack.getCurrentLap()).isEqualTo(3);
@@ -64,7 +62,7 @@ public class RaceTrackTest {
         int secondExpectedPosition = 1;
         int thirdExpectedPosition = 2;
 
-        RaceTrack raceTrack = new RaceTrack(new CarRegister(inputNameString),new LapRegister(inputLapCountString));
+        RaceTrack raceTrack = new RaceTrack(new CarRegister(inputNameString),new Lap(inputLapCountString));
 
         //when
         raceTrack.raceEachLap(moveAccelerationPower);
