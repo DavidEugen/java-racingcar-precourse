@@ -39,4 +39,16 @@ public class RaceTrack {
     public int getCurrentLap() {
         return this.lapCount;
     }
+
+    public void raceEachLap(int accelerationPower) {
+        this.lapCount--;
+        for (Car car : cars) {
+            car.move(accelerationPower);
+        }
+    }
+
+    public Car getCar(int index) {
+        return cars.get(index);
+    }
+
 }

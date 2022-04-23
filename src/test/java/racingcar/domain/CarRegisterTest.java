@@ -10,15 +10,15 @@ public class CarRegisterTest {
     @DisplayName("입력받은 문자열로 차량을 만든다.")
     void 차량_생성() {
         //given
-        String inputString = "Tester1, Tester2, Tester 3";
+        String inputString = "Test1, Test2, Test 3";
 
         //when
         CarRegister carRegister = new CarRegister(inputString);
 
         //then
         assertThat(carRegister.getCount()).isEqualTo(3);
-        assertThat(carRegister.getCarName(1)).isEqualTo("Tester2");
-        assertThat(carRegister.getCarName(2)).isEqualTo("Tester 3");
+        assertThat(carRegister.getCarName(1)).isEqualTo("Test2");
+        assertThat(carRegister.getCarName(2)).isEqualTo("Test 3");
     }
 
 }

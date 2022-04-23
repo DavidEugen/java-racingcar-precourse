@@ -13,14 +13,14 @@ public class CarTest {
     @BeforeEach
     void setup(){
         //given
-        car = new Car("Tester");
+        car = new Car("Test");
     }
 
     @Test
     @DisplayName("차량 이름 확인")
     void 차량_이름_확인() {
         //then
-        assertThat(car.getName()).isEqualTo("Tester");
+        assertThat(car.getName()).isEqualTo("Test");
     }
 
     @Test
