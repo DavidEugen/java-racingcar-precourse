@@ -2,8 +2,6 @@ package racingcar.domain;
 
 public class Car {
 
-    private static final int THRESHOLD_ACCELERATION_POWER = 4;
-
     private final String name;
     private int position;
 
@@ -19,8 +17,8 @@ public class Car {
         return this.position;
     }
 
-    public void move(int accelerationPower) {
-        if (accelerationPower >= THRESHOLD_ACCELERATION_POWER) {
+    public void move(AccelPowerStrategy accelerationPowerStrategy) {
+        if (accelerationPowerStrategy.isMove()) {
             this.position++;
         }
     }

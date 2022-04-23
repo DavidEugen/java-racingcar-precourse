@@ -3,7 +3,6 @@ package racingcar.domain;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.message.ERRORMessage;
@@ -20,7 +19,7 @@ public class LapTest {
         Lap lap = new Lap(givenValue);
 
         //then
-        assertThat(lap.getCurrentLap()).isEqualTo(1);
+        assertThat(lap).isEqualTo(new Lap(1));
     }
 
     @Test
@@ -34,9 +33,6 @@ public class LapTest {
                 ERRORMessage.LAP_VALIDATE_POSITIVE);
 
     }
-
-
-
 
 
 }

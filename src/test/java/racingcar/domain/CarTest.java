@@ -27,7 +27,12 @@ public class CarTest {
     @DisplayName("주어진 값에 대해 차 정지 확인")
     void 차량_정지_확인() {
         //when
-        car.move(3);
+        car.move(new AccelPowerStrategy() {
+            @Override
+            public boolean isMove() {
+                return false;
+            }
+        });
 
         //then
         assertThat(car.getPosition()).isEqualTo(0);
@@ -37,7 +42,12 @@ public class CarTest {
     @DisplayName("주어진 값에 대해 차 움직임 확인")
     void 차량_움직임_확인() {
         //when
-        car.move(4);
+        car.move(new AccelPowerStrategy() {
+            @Override
+            public boolean isMove() {
+                return true;
+            }
+        });
 
         //then
         assertThat(car.getPosition()).isEqualTo(1);

@@ -52,33 +52,4 @@ public class RaceTrackTest {
 
     }
 
-    @Test
-    @DisplayName("랩을 돌았을때 위치 이동 검증.")
-    void 랩을_돌았을때_위치_검증() {
-        //given
-        int moveAccelerationPower = 4;
-        int stopAccelerationPower = 3;
-        int firstExpectedPosition = 1;
-        int secondExpectedPosition = 1;
-        int thirdExpectedPosition = 2;
-
-        RaceTrack raceTrack = new RaceTrack(new CarRegister(inputNameString),new Lap(inputLapCountString));
-
-        //when
-        raceTrack.raceEachLap(moveAccelerationPower);
-        //then
-        assertThat(raceTrack.getCar(1).getPosition()).isEqualTo(firstExpectedPosition);
-
-        //when
-        raceTrack.raceEachLap(stopAccelerationPower);
-        //then
-        assertThat(raceTrack.getCar(1).getPosition()).isEqualTo(secondExpectedPosition);
-
-        //when
-        raceTrack.raceEachLap(moveAccelerationPower);
-        //then
-        assertThat(raceTrack.getCar(1).getPosition()).isEqualTo(thirdExpectedPosition);
-
-    }
-
 }

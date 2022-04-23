@@ -6,21 +6,21 @@ import java.util.List;
 public class RaceTrack {
 
     private final List<Car> cars;
-    private Lap lapCount;
+    private Lap lap;
 
     public RaceTrack(String[] carNames) {
         this.cars = readyCars(carNames);
-        this.lapCount = new Lap(0);
+        this.lap = new Lap(0);
     }
 
     public RaceTrack(CarRegister carRegister) {
         this(carRegister.getCarNames());
-        this.lapCount = new Lap(0);
+        this.lap = new Lap(0);
     }
 
     public RaceTrack(CarRegister carRegister, Lap lap) {
         this(carRegister.getCarNames());
-        this.lapCount = lap;
+        this.lap = lap;
     }
 
     private List<Car> readyCars(String[] carNames) {
@@ -37,13 +37,13 @@ public class RaceTrack {
     }
 
     public int getCurrentLap() {
-        return lapCount.getCurrentLap();
+        return lap.getCurrentLap();
     }
 
-    public void raceEachLap(int accelerationPower) {
-        lapCount.decrease();
+    public void raceEachLap(AccelPowerStrategy accelerationPowerStrategy) {
+        lap.decrease();
         for (Car car : cars) {
-            car.move(accelerationPower);
+            car.move(accelerationPowerStrategy);
         }
     }
 
