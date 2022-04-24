@@ -9,6 +9,17 @@ public class Position {
         this.position = position;
     }
 
+    public Position getBiggerPosition(Position comparePosition) {
+        if (this.position >= comparePosition.position) {
+            return this;
+        }
+        return comparePosition;
+    }
+
+    public int getValue() {
+        return position;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -28,12 +39,5 @@ public class Position {
 
     public void increase() {
         position++;
-    }
-
-    public Position getBiggerPosition(Position comparePosition) {
-        if (this.position >= comparePosition.position) {
-            return this;
-        }
-        return comparePosition;
     }
 }

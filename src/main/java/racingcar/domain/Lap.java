@@ -2,33 +2,28 @@ package racingcar.domain;
 
 import java.util.Objects;
 import racingcar.message.ERRORMessage;
+import racingcar.util.ValidateUtil;
 
 public class Lap {
 
     int lap;
 
     public Lap(Integer inputValue) {
-        validate(inputValue);
+        ValidateUtil.positive(inputValue);
         this.lap = inputValue;
     }
 
     public Lap(String inputText) {
-        validate(inputText);
+        ValidateUtil.numberFormat(inputText);
         this.lap = Integer.parseInt(inputText);
     }
 
-    private void validate(String inputText) {
-        try {
-            Integer.parseInt(inputText);
-        } catch (NumberFormatException ex) {
-            throw new IllegalArgumentException(ERRORMessage.LAP_VALIDATE_INTEGER);
-        }
+    public int getCurrentLap() {
+        return lap;
     }
 
-    private void validate(Integer inputValue) {
-        if (inputValue < 0) {
-            throw new IllegalArgumentException(ERRORMessage.LAP_VALIDATE_POSITIVE);
-        }
+    public void decrease() {
+        lap--;
     }
 
     @Override
@@ -48,11 +43,5 @@ public class Lap {
         return Objects.hash(lap);
     }
 
-    public int getCurrentLap() {
-        return lap;
-    }
 
-    public void decrease() {
-        lap--;
-    }
 }
