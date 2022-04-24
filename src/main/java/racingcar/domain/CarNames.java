@@ -1,22 +1,25 @@
 package racingcar.domain;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class CarNames {
 
-    private final String[] carNames;
+    private final List<String> carNames;
 
     public CarNames(String inputString) {
-        this.carNames = inputString.split("\\s*,\\s*");
+        this.carNames = Arrays.asList(inputString.split("\\s*,\\s*"));
     }
 
     public int getCount() {
-        return carNames.length;
+        return carNames.size();
     }
 
     public String getCarName(int index) {
-        return carNames[index];
+        return carNames.get(index);
     }
 
-    public String[] getCarNames() {
+    public List<String> getCarNames() {
         return this.carNames;
     }
 }

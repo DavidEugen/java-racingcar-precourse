@@ -2,6 +2,8 @@ package racingcar.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,7 +24,7 @@ public class RaceTrackTest {
     @DisplayName("차량을 초기화 시킨다")
     void 차량_초기화_시킨다() {
         //given
-        String[] carNames = {"Tester1", "Tester2", "Tester3"};
+        List<String> carNames = Arrays.asList("Tester1", "Tester2", "Tester3");
 
         //when
         RaceTrack raceTrack = new RaceTrack(carNames);

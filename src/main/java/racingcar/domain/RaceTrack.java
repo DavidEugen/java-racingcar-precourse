@@ -8,7 +8,7 @@ public class RaceTrack {
     private final List<Car> cars;
     private Lap lap;
 
-    public RaceTrack(String[] carNames) {
+    public RaceTrack(List<String> carNames) {
         this.cars = readyCars(carNames);
         this.lap = new Lap(0);
     }
@@ -23,9 +23,8 @@ public class RaceTrack {
         this.lap = lap;
     }
 
-    private List<Car> readyCars(String[] carNames) {
-        final List<Car> cars;
-        cars = new ArrayList<>();
+    private List<Car> readyCars(List<String> carNames) {
+        List<Car> cars = new ArrayList<>();
         for (String name : carNames) {
             cars.add(new Car(name));
         }
@@ -53,5 +52,9 @@ public class RaceTrack {
 
     public boolean keepGoing() {
         return lap.getCurrentLap() > 0;
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 }
