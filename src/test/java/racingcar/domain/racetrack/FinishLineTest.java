@@ -1,4 +1,4 @@
-package racingcar.domain;
+package racingcar.domain.racetrack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,9 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import racingcar.domain.car.Car;
+import racingcar.domain.car.Position;
+import racingcar.domain.racetrack.FinishLine;
 
 public class FinishLineTest {
     private List<Car> cars;

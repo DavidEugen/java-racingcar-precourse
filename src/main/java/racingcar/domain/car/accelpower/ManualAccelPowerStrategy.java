@@ -1,4 +1,4 @@
-package racingcar.domain;
+package racingcar.domain.car.accelpower;
 
 public class ManualAccelPowerStrategy implements AccelPowerStrategy{
 

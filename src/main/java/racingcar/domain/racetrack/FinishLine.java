@@ -1,7 +1,9 @@
-package racingcar.domain;
+package racingcar.domain.racetrack;
 
 import java.util.ArrayList;
 import java.util.List;
+import racingcar.domain.car.Car;
+import racingcar.domain.car.Position;
 
 public class FinishLine {
     private final List<Car> allCars;

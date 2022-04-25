@@ -1,7 +1,10 @@
-package racingcar.domain;
+package racingcar.domain.racetrack;
 
 import java.util.ArrayList;
 import java.util.List;
+import racingcar.domain.car.accelpower.AccelPowerStrategy;
+import racingcar.domain.car.Car;
+import racingcar.domain.car.CarNames;
 
 public class RaceTrack {
 
@@ -44,10 +47,6 @@ public class RaceTrack {
         for (Car car : cars) {
             car.move(accelerationPowerStrategy);
         }
-    }
-
-    public Car getCar(int index) {
-        return cars.get(index);
     }
 
     public boolean keepGoing() {

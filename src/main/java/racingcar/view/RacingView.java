@@ -1,7 +1,10 @@
-package racingcar.domain;
+package racingcar.view;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.util.List;
+import racingcar.domain.racetrack.FinishLine;
+import racingcar.domain.racetrack.RaceTrack;
+import racingcar.domain.car.Car;
 import racingcar.message.UIMessage;
 
 public class RacingView {
@@ -44,6 +47,5 @@ public class RacingView {
         StringBuilder sb = new StringBuilder(UIMessage.UI_WINNER);
         sb.append(String.join(",", finishLine.getWinnerNames())) ;
         showMessage(sb.toString());
-
     }
 }

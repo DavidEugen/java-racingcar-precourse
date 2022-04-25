@@ -1,7 +1,6 @@
-package racingcar.domain;
+package racingcar.domain.racetrack;
 
 import java.util.Objects;
-import racingcar.message.ERRORMessage;
 import racingcar.util.ValidateUtil;
 
 public class Lap {
